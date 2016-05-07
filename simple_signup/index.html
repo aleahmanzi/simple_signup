@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+	<meta charset="UTF-8">
+	<title>simple_signup</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular.min.js"></script>
+
+
+<style>
+.unit_wrap { width: 700px; margin: 0 auto; }
+
+.hero_wrap { outline: 0px solid black; min-height: 25px; }
+.text { font-size: 50px; margin-left: 25px; color: #494F50; position: relative; top: 25px; }
+
+.form_wrap { outline: 0px solid red; height: 200px; margin-top: 25px; width: 350px; display: inline-block; }
+button:hover { cursor: pointer; }
+.brand_logo { outline: 1px solid blue; height: 200px; width: 350px; display: inline-block; }
+
+.footer_wrap { outline: 0px solid black; width: 700px; margin: 0 auto; min-height: 150px; }
+.end { color: #494F50; text-align: center; margin-top: 25px; }
+
+</style>
+
+<script>
+ var demo = angular.module('demo', []);
+  demo.directive('optIn', function(){
+	return {
+	 transclude: true,
+	 templateUrl: 'insert.html',
+	 restrict: 'E',
+	}
+  });
+</script>
+</head>
+
+<body>
+<div class="unit_wrap">
+ <header class="hero_wrap">
+  <div class="data_wrap">
+   <p class="text"><strong>Acme Inc.</strong></p>
+  </div><!-- . data_wrap - -->
+ </header><!-- . hero_wrap - -->
+
+<section>
+ <opt-in class="main_wrap">
+  <div class="brand_logo"></div>
+ </opt-in><!-- . main_wrap - -->
+</section>
+
+ <footer class="footer_wrap">
+  <div class="end">
+  created by aleah
+  </div><!-- . end - -->
+ </footer><!-- . footer_wrap - -->
+</div><!-- . unit_wrap - --> 
+
+	
+</body>
+</html>
